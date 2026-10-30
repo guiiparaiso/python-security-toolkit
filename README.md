@@ -28,7 +28,7 @@ pip install requests colorama
 
 ---
 
-![Demonstração da Ferramenta](./assets/Captura%20de%20tela%202026-10-30%20195302.png)
+![Demonstração da Ferramenta](./assets/Captura de tela 2026-10-30 195302.png)
 
 ## 🎮 Como Utilizar
 
