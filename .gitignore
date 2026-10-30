@@ -1,0 +1,9 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Relatórios JSON gerados pelas ferramentas
+analysis_report_*.json
+
+# Wordlists locais ou ficheiros de teste temporários
+wordlist.txt
