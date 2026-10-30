@@ -28,8 +28,6 @@ pip install requests colorama
 
 ---
 
-![Demonstração da Ferramenta](./assets/Captura de tela 2026-10-30 195302.png)
-
 ## 🎮 Como Utilizar
 
 Para iniciar o painel de controlo central com o menu interativo, executa:
