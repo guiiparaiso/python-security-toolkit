@@ -17,17 +17,17 @@ Suite modular e automatizada de ferramentas de cibersegurança desenvolvida em P
 - `json` & `re` (Exportação estruturada de relatórios e Expressões Regulares)
 
 ## 📦 Instalação e Utilização
-
+```bash
 Clona o repositório e entra na pasta:
-  -`git clone https://github.com/guiiparaiso/python-security-toolkit.git`
+  git clone https://github.com/guiiparaiso/python-security-toolkit.git
   
-  -`cd python-security-toolkit`
+  cd python-security-toolkit
 
 Instala as dependências necessárias:
-  -`pip install -r requirements.txt`
+  pip install -r requirements.txt
 
 Executa o menu principal:
-  -`python security_toolkit.py`
+  python security_toolkit.py
 
 ## 📸 Exemplo de Execução
 ![Demonstração do Toolkit](assets/preview.png)
