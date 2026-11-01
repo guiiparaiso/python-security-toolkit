@@ -56,7 +56,7 @@ def analyze_target(target_url):
             elif status == 403:
                 print(f"  {Fore.BLUE}[403 FORBIDDEN]-> {url}{Style.RESET_ALL}")
             else:
-                print(f"  {Fore.MAGENTA}[{status}]          -> {url}{Style.RESET_ALL}")
+                print(f"  {Fore.MAGENTA}[{status}]           -> {url}{Style.RESET_ALL}")
         except requests.RequestException:
             pass
 

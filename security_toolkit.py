@@ -7,7 +7,7 @@ init(autoreset=True)
 def banner():
     print(f"""
 {Fore.CYAN}╔══════════════════════════════════════════════════════╗
-║               PYTHON SECURITY TOOLKIT                ║
+║                PYTHON SECURITY TOOLKIT               ║
 ║         Suite de Ferramentas de Cibersegurança       ║
 ╚══════════════════════════════════════════════════════╝{Style.RESET_ALL}
     """)
@@ -28,7 +28,7 @@ def main():
         print(f"{Fore.GREEN}Escolhe uma ferramenta para executar:{Style.RESET_ALL}")
         print("  [1] OSINT Recon Analyzer (Reconhecimento de Domínios/APIs)")
         print("  [2] TCP Port Scanner (Varredura de Portas Multithreaded)")
-        print("  [3] Web Directory Fuzzer (Descoberta de Diretórios Web)")
+        print("  [3] Web Directory Fuzzer / Analyzer (Análise Web)")
         print("  [4] WordPress Enumerator (Análise e Enumeração CMS WP)")
         print("  [0] Sair do Toolkit\n")
 
@@ -48,9 +48,8 @@ def main():
 
         elif choice == "3":
             url = input(f"{Fore.CYAN}Digite o URL alvo (ex: http://exemplo.com) > {Style.RESET_ALL}").strip()
-            wordlist = input(f"{Fore.CYAN}Digite o caminho da wordlist (ex: wordlist.txt) > {Style.RESET_ALL}").strip()
-            if url and wordlist:
-                run_command([sys.executable, "web_fuzzer.py", "-url", url, "-wordlist", wordlist])
+            if url:
+                run_command([sys.executable, "web_analyzer.py", "-url", url])
 
         elif choice == "4":
             url = input(f"{Fore.CYAN}Digite o URL do site WordPress (ex: https://exemplo.com) > {Style.RESET_ALL}").strip()
