@@ -1,42 +1,32 @@
 # 🛡️ Python Security Toolkit
 
-Uma suíte modular de ferramentas de cibersegurança e reconhecimento desenvolvida em Python para fins educacionais, auditorias autorizadas e construção de portfólio técnico.
+Suite modular e automatizada de ferramentas de cibersegurança desenvolvida em Python para fins educacionais, auditorias defensivas (Blue Team) e testes de reconhecimento (Red Team).
 
-## 🚀 Ferramentas Incluídas
+## 🚀 Funcionalidades
+- **TCP Port Scanner**: Varredura rápida de portas utilizando multithreading (ThreadPoolExecutor).
+- **Web Recon Analyzer**: Análise de cabeçalhos HTTP, rotas comuns e verificação do robots.txt.
+- **WordPress Enumerator**: Identificação de sitemaps, falhas de directory indexing e plugins comuns.
+- **Log Analyzer (Blue Team)**: Análise de ficheiros de log (Apache/Nginx/Auth) baseada em Regex para deteção de tráfego suspeito, contagem de IPs (Brute Force) e assinaturas de injeção (SQLi/XSS).
 
-O toolkit é controlado centralmente através de um menu interativo (security_toolkit.py) que integra os seguintes módulos:
+## 🛠️ Tecnologias Utilizadas
+- **Python 3.x**
+- `argparse` (Gestão de argumentos na CLI)
+- `requests` (Requisições HTTP seguras e com timeout)
+- `socket` & `concurrent.futures` (Conectividade e concorrência)
+- `colorama` (Interface visual colorida no terminal)
+- `json` & `re` (Exportação estruturada de relatórios e Expressões Regulares)
 
-1. OSINT Recon Analyzer (osint_analyzer.py): Realiza reconhecimento inicial de domínios e consultas de inteligência em APIs públicas.
-2. TCP Port Scanner (port_scanner.py): Varredura de portas TCP multithreaded de alta performance para mapeamento de superfícies de ataque.
-3. Service Inspector (service_inspector.py): Realiza banner grabbing e inspeção de serviços ativos nas portas descobertas.
-4. Web Directory Fuzzer (web_fuzzer.py): Ferramenta de descoberta de diretórios e ficheiros ocultos baseada em wordlists.
-5. Web Analyzer (web_analyzer.py): Analisa cabeçalhos HTTP, extrai e lê automaticamente o conteúdo de ficheiros robots.txt e avalia redirecionamentos (301/302).
-6. WordPress Enumerator (wp_enumerator.py): Focado em ambientes CMS WordPress, verifica sitemaps, valida proteções de diretórios (Directory Indexing) e deteta pegadas estruturais.
-
----
-
-## 📦 Instalação e Requisitos
-
-Certifica-te de que tens o Python instalado. O projeto utiliza as bibliotecas externas necessárias para requisições e formatação visual no terminal.
+## 📦 Instalação e Utilização
 
 1. Clona o repositório:
-git clone https://github.com/guiiparaiso/osint-recon-analyzer.git
-cd osint-recon-analyzer
+   git clone https://github.com/guiiparaiso/python-security-toolkit.git
+   cd python-security-toolkit
 
 2. Instala as dependências necessárias:
-pip install requests colorama
+   pip install -r requirements.txt
 
----
+3. Executa o menu principal:
+   python security_toolkit.py
 
-## 🎮 Como Utilizar
-
-Para iniciar o painel de controlo central com o menu interativo, executa:
-
-python security_toolkit.py
-
-A partir daí, podes navegar facilmente pelas opções disponíveis através de uma interface intuitiva e parametrizada.
-
----
-
-## ⚠️ Aviso Legal
-Esta ferramenta foi desenvolvida estritamente para fins educacionais e de testes de segurança autorizados. O uso destas ferramentas contra alvos sem consentimento prévio explícito é ilegal.
+## 📸 Exemplo de Execução
+*(Insere aqui um GIF ou print do terminal a correr o menu ou um dos scanners)*
