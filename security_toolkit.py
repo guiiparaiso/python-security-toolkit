@@ -30,6 +30,7 @@ def main():
         print("  [2] TCP Port Scanner (Varredura de Portas Multithreaded)")
         print("  [3] Web Directory Fuzzer / Analyzer (Análise Web)")
         print("  [4] WordPress Enumerator (Análise e Enumeração CMS WP)")
+        print("  [5] Log Analyzer (Análise de Logs Blue Team / Brute Force)")
         print("  [0] Sair do Toolkit\n")
 
         choice = input(f"{Fore.YELLOW}Opção desejada > {Style.RESET_ALL}").strip()
@@ -55,6 +56,11 @@ def main():
             url = input(f"{Fore.CYAN}Digite o URL do site WordPress (ex: https://exemplo.com) > {Style.RESET_ALL}").strip()
             if url:
                 run_command([sys.executable, "wp_enumerator.py", "-url", url])
+                
+        elif choice == "5":
+            log_path = input(f"{Fore.CYAN}Digite o caminho do ficheiro de log (ex: access.log) > {Style.RESET_ALL}").strip()
+            if log_path:
+                run_command([sys.executable, "log_analyzer.py", "-file", log_path])
 
         elif choice == "0":
             print(f"\n{Fore.CYAN}[*] A sair do Security Toolkit. Até logo!{Style.RESET_ALL}\n")
