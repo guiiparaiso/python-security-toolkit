@@ -18,7 +18,7 @@ Suite modular e automatizada de ferramentas de cibersegurança desenvolvida em P
 
 ## 📦 Instalação e Utilização
 
-1. Clona o repositório:
+1. Clona o repositório e entra na pasta:
    git clone https://github.com/guiiparaiso/python-security-toolkit.git
    cd python-security-toolkit
 
@@ -29,4 +29,4 @@ Suite modular e automatizada de ferramentas de cibersegurança desenvolvida em P
    python security_toolkit.py
 
 ## 📸 Exemplo de Execução
-*(Insere aqui um GIF ou print do terminal a correr o menu ou um dos scanners)*
+![Demonstração do Toolkit](assets/preview.png)
