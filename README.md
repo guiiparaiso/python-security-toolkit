@@ -3,8 +3,11 @@
 Suite modular e automatizada de ferramentas de cibersegurança desenvolvida em Python para fins educacionais, auditorias defensivas (Blue Team) e testes de reconhecimento (Red Team).
 
 ## 🚀 Funcionalidades
-- **TCP Port Scanner**: Varredura rápida de portas utilizando multithreading (ThreadPoolExecutor).
+- **OSINT Recon Analyzer**: Reconhecimento automatizado de alvos, recolha de IPs/geolocalização, resolução de registos DNS (DoH) e mapeamento de subdomínios via transparência de certificados.
+- **TCP Port Scanner**: Varredura rápida de portas utilizando multithreading (`ThreadPoolExecutor`).
+- **Service Inspector**: Inspeção detalhada e recolha de banners dos serviços ativos descobertos nas portas.
 - **Web Recon Analyzer**: Análise de cabeçalhos HTTP, rotas comuns e verificação do robots.txt.
+- **Web Directory Fuzzer**: Descoberta de diretórios, páginas e ficheiros ocultos em servidores web.
 - **WordPress Enumerator**: Identificação de sitemaps, falhas de directory indexing e plugins comuns.
 - **Log Analyzer (Blue Team)**: Análise de ficheiros de log (Apache/Nginx/Auth) baseada em Regex para deteção de tráfego suspeito, contagem de IPs (Brute Force) e assinaturas de injeção (SQLi/XSS).
 
