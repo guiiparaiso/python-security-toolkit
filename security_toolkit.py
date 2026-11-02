@@ -289,6 +289,12 @@ try:
 except ImportError:
     run_log_analyzer_interactive = None
 
+# Módulo 8: File Integrity Monitor (FIM)
+try:
+    from fim import run_fim
+except ImportError:
+    run_fim = None
+
 
 def print_banner():
     banner = f"""
@@ -311,6 +317,7 @@ def main_menu():
         print("[5] Web Directory Fuzzer (Descoberta de Diretórios Ocultos)")
         print("[6] WordPress Enumerator (Análise e Enumeração CMS WP)")
         print("[7] Log Analyzer (Análise de Logs Blue Team / Brute Force)")
+        print("[8] File Integrity Monitor (Monitorização de Ficheiros FIM)")
         print("[0] Sair do Toolkit\n")
 
         choice = input(
@@ -380,6 +387,15 @@ def main_menu():
                 )
                 input("\nPressione ENTER para continuar...")
 
+        elif choice == "8":
+            if run_fim:
+                run_fim()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] O módulo 'fim.py' não foi encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
         elif choice == "0":
             print(
                 f"\n{Fore.GREEN}A sair do Python Security Toolkit. Até logo!{Style.RESET_ALL}"
@@ -387,7 +403,7 @@ def main_menu():
             sys.exit(0)
         else:
             print(
-                f"\n{Fore.RED}[ERRO] Opção inválida. Escolhe um número entre 0 e 7.{Style.RESET_ALL}"
+                f"\n{Fore.RED}[ERRO] Opção inválida. Escolhe um número entre 0 e 8.{Style.RESET_ALL}"
             )
             input("\nPressione ENTER para continuar...")
 

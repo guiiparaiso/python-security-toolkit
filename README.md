@@ -10,6 +10,7 @@ Suite modular e automatizada de ferramentas de cibersegurança desenvolvida em P
 - **Web Directory Fuzzer**: Descoberta de diretórios, páginas e ficheiros ocultos em servidores web.
 - **WordPress Enumerator**: Identificação de sitemaps, falhas de directory indexing e plugins comuns.
 - **Log Analyzer (Blue Team)**: Análise de ficheiros de log (Apache/Nginx/Auth) baseada em Regex para deteção de tráfego suspeito, contagem de IPs (Brute Force) e assinaturas de injeção (SQLi/XSS).
+- **File Integrity Monitor (FIM)**: Verificação de integridade de ficheiros do sistema calculando hashes SHA-256 e alertando sobre ficheiros modificados, criados ou eliminados.
 
 ## 🛠️ Tecnologias Utilizadas
 - **Python 3.x**
