@@ -318,4 +318,139 @@ def print_banner():
 def main_menu():
     while True:
         print_banner()
-        print(f"{Fore.YELLOW}Escolhe uma ferramenta para executar:{Style.
+        print(f"{Fore.YELLOW}Escolhe uma ferramenta para executar:{Style.RESET_ALL}")
+
+        print(f"\n{Fore.MAGENTA}--- FASE 1: RECONHECIMENTO ---{Style.RESET_ALL}")
+        print("[1] OSINT Recon Analyzer (Reconhecimento de Domínios/APIs)")
+        print("[2] Subdomain Brute-Forcer (Resolução DNS via Wordlist)")
+
+        print(f"\n{Fore.MAGENTA}--- FASE 2: VARREDURA DE REDE ---{Style.RESET_ALL}")
+        print("[3] TCP Port Scanner (Varredura de Portas Multithreaded)")
+        print("[4] Service Inspector (Inspeção e Banners de Serviços)")
+
+        print(f"\n{Fore.MAGENTA}--- FASE 3: ANÁLISE E ENUMERAÇÃO WEB ---{Style.RESET_ALL}")
+        print("[5] Web Recon Analyzer (Análise HTTP e Robots.txt)")
+        print("[6] Web Directory Fuzzer (Descoberta de Diretórios Ocultos)")
+        print("[7] WordPress Enumerator (Análise e Enumeração CMS WP)")
+
+        print(f"\n{Fore.MAGENTA}--- FASE 4: DEFESA, FORENSE E UTILITÁRIOS ---{Style.RESET_ALL}")
+        print("[8] Log Analyzer (Análise de Logs Blue Team / Brute Force)")
+        print("[9] File Integrity Monitor (Monitorização de Ficheiros FIM)")
+        print("[10] Password Strength & Entropy Analyzer (Auditoria de Senhas)")
+
+        print(f"\n{Fore.GREEN}[0] Sair do Toolkit{Style.RESET_ALL}\n")
+
+        choice = input(
+            f"{Fore.GREEN}Opção desejada > {Style.RESET_ALL}"
+        ).strip()
+
+        if choice == "1":
+            if run_osint:
+                run_osint()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'osint_analyzer.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "2":
+            if run_subdomain_fuzzer:
+                run_subdomain_fuzzer()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'subdomain_fuzzer.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "3":
+            if run_port_scanner_interactive:
+                run_port_scanner_interactive()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'port_scanner.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "4":
+            if run_service_inspector_interactive:
+                run_service_inspector_interactive()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'service_inspector.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "5":
+            if run_web_analyzer_interactive:
+                run_web_analyzer_interactive()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'web_analyzer.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "6":
+            if run_web_fuzzer_interactive:
+                run_web_fuzzer_interactive()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'web_fuzzer.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "7":
+            if run_wp_enumerator_interactive:
+                run_wp_enumerator_interactive()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'wp_enumerator.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "8":
+            if run_log_analyzer_interactive:
+                run_log_analyzer_interactive()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'log_analyzer.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "9":
+            if run_fim:
+                run_fim()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'fim.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "10":
+            if run_password_analyzer:
+                run_password_analyzer()
+            else:
+                print(
+                    f"\n{Fore.RED}[ERRO] Módulo 'password_analyzer.py' não encontrado.{Style.RESET_ALL}"
+                )
+                input("\nPressione ENTER para continuar...")
+
+        elif choice == "0":
+            print(
+                f"\n{Fore.GREEN}A sair do Python Security Toolkit. Até logo!{Style.RESET_ALL}"
+            )
+            sys.exit(0)
+        else:
+            print(
+                f"\n{Fore.RED}[ERRO] Opção inválida. Escolhe um número entre 0 e 10.{Style.RESET_ALL}"
+            )
+            input("\nPressione ENTER para continuar...")
+
+
+if __name__ == "__main__":
+    try:
+        main_menu()
+    except KeyboardInterrupt:
+        print(
+            f"\n\n{Fore.YELLOW}[!] Execução interrompida pelo utilizador. A sair...{Style.RESET_ALL}"
+        )
+        sys.exit(0)
