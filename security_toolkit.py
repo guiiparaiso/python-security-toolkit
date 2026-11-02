@@ -229,3 +229,93 @@ try:
                 resp = fuzzer_requests.get(
                     url_to_test, timeout=2.5, allow_redirects=False
                 )
+                status = resp.status_code
+                if status == 200:
+                    print(
+                        f"{Fore.GREEN}[200 OK]       -> {url_to_test}{Style.RESET_ALL}"
+                    )
+                elif status in [301, 302, 303, 307, 308]:
+                    print(
+                        f"{Fore.YELLOW}[{status} REDIRECT] -> {url_to_test}{Style.RESET_ALL}"
+                    )
+                elif status == 403:
+                    print(
+                        f"{Fore.BLUE}[403 FORBIDDEN]-> {url_to_test}{Style.RESET_ALL}"
+                    )
+            except:
+                pass
+        print("=" * 50)
+        print(f"{Fore.CYAN}[*] Fuzzing concluído!{Style.RESET_ALL}")
+        input(
+            f"\n{Fore.DIM}Pressione ENTER para retornar ao menu...{Style.RESET_ALL}"
+        )
+
+
+except ImportError:
+    run_web_fuzzer_interactive = None
+
+# Módulo 7: WordPress Enumerator
+try:
+    from wp_enumerator import enumerate_wordpress
+
+
+    def run_wp_enumerator_interactive():
+        url = input(
+            f"{Fore.YELLOW}[?] URL alvo (ex: https://exemplo.com): {Style.RESET_ALL}"
+        ).strip()
+        if url:
+            enumerate_wordpress(url)
+        input(
+            f"\n{Fore.DIM}Pressione ENTER para retornar ao menu...{Style.RESET_ALL}"
+        )
+
+
+except ImportError:
+    run_wp_enumerator_interactive = None
+
+# Módulo 8: Log Analyzer
+try:
+    from log_analyzer import analisar_logs
+
+
+    def run_log_analyzer_interactive():
+        path = input(
+            f"{Fore.YELLOW}[?] Caminho para o ficheiro de log (ex: access.log): {Style.RESET_ALL}"
+        ).strip()
+        if path:
+            analisar_logs(path)
+        input(
+            f"\n{Fore.DIM}Pressione ENTER para retornar ao menu...{Style.RESET_ALL}"
+        )
+
+
+except ImportError:
+    run_log_analyzer_interactive = None
+
+# Módulo 9: File Integrity Monitor (FIM)
+try:
+    from fim import run_fim
+except ImportError:
+    run_fim = None
+
+# Módulo 10: Password Analyzer
+try:
+    from password_analyzer import run_password_analyzer
+except ImportError:
+    run_password_analyzer = None
+
+
+def print_banner():
+    banner = f"""
+{Fore.CYAN}╔══════════════════════════════════════════════════════╗
+║                PYTHON SECURITY TOOLKIT               ║
+║             Suite de Ferramentas Integrada           ║
+╚══════════════════════════════════════════════════════╝{Style.RESET_ALL}
+"""
+    print(banner)
+
+
+def main_menu():
+    while True:
+        print_banner()
+        print(f"{Fore.YELLOW}Escolhe uma ferramenta para executar:{Style.
