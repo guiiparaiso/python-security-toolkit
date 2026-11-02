@@ -223,3 +223,9 @@ try:
         print(f"[*] Iniciando fuzzing...\n" + "=" * 50)
         for word in words:
             if not word or word.startswith("#"):
+                continue
+            url_to_test = f"{target_url}/{word}"
+            try:
+                resp = fuzzer_requests.get(
+                    url_to_test, timeout=2.5, allow_redirects=False
+                )
